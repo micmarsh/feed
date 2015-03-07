@@ -134,7 +134,9 @@ withFeedItems is fe =
       Feed.Types.RSSFeed  f -> Feed.Types.RSSFeed
           f{rssChannel=(rssChannel f){rssItems=[]}}
       Feed.Types.RSS1Feed f -> Feed.Types.RSS1Feed
-          f{feedItems=[]})
+          f{feedItems=[]}
+      Feed.Types.XMLFeed xml -> Feed.Types.XMLFeed
+          xml{elContent=[]})
    is
 
 newItem :: FeedKind -> Feed.Types.Item
